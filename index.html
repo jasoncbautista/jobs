@@ -11,37 +11,5 @@
         
         </div>
 
-    <script>
-        $(document).ready(function(){
-
-            var JobsApp = {};
-
-            JobsApp.createJobEl= function(job) {
-                return $("<div>" + job.description + "</div>");
-            };
-
-            JobsApp.renderList = function(listHolderEl, jobList){
-                _.each(jobList, function(job) {
-                    var jobEl = JobsApp.createJobEl
-                    listHolderEl.append(jobEl);
-                });
-            };
-
-            function reqListener () {
-                var jsonString = this.responseText;
-                // console.log(jsonString);
-                var jsonObj = JSON.parse(jsonString);
-                console.log(jsonObj);
-                JobsApp.renderList($("#jobList), jsonObj);
-            }
-
-            var oReq = new XMLHttpRequest();
-            oReq.onload = reqListener;
-            oReq.open("get", "job_list.json", true);
-            oReq.send();
-        });
-
-
-
-    </script>
+    <script src="jobs.js"></script>
 </html>
