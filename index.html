@@ -8,12 +8,17 @@
 
     <script>
         $(document).ready(function(){
-            console.log("hi");
-            $.get("job_list.json", function(data) {
-                console.log('data', data);
-            });
+            function reqListener () {
+                console.log(this.responseText);
+            }
 
-            console.log("hi");
+            var oReq = new XMLHttpRequest();
+            oReq.onload = reqListener;
+            oReq.open("get", "job_list.json", true);
+            oReq.send();
         });
+
+
+
     </script>
 </html>
