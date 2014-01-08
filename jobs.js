@@ -1,8 +1,6 @@
  $(document).ready(function(){
     var JobsApp = {};
 
-
-
     /**
      * Makes an ajax call to the server to ask the job to be scheduled.
      * Takes two functions, one for successful scheduling, one for failed.
