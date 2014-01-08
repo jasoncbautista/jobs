@@ -9,7 +9,10 @@
     <script>
         $(document).ready(function(){
             function reqListener () {
-                console.log(this.responseText);
+                var jsonString = this.responseText;
+                // console.log(jsonString);
+                var jsonObj = JSON.parse(jsonString);
+                console.log(jsonObj);
             }
 
             var oReq = new XMLHttpRequest();
