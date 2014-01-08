@@ -6,7 +6,7 @@
             el.remove(".details");
             var jobDetailsEl = JobsApp.createJobDetailsEl();
             el.append(jobDetailsEl);
-        };
+        });
         return el;
     };
 
