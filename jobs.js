@@ -69,7 +69,7 @@
     };
 
     JobsApp.createHistoryEl = function(history) {
-        return $("<div>" + history.last_ran + "</div>");
+        return $("<div class='historyEntry'>" + history.last_ran + "</div>");
     };
 
     JobsApp.renderJobHistory = function(jobDetails, el){
@@ -77,6 +77,11 @@
             console.log(history);
             var historyEl = JobsApp.createHistoryEl(history);
             el.append(historyEl);
+        });
+
+        debugger;
+        d3.selectAll(".historyEntry").style("background-color", function(d, i) {
+              return i % 2 ? "green" : "brown";
         });
     };
 
