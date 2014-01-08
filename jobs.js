@@ -24,7 +24,8 @@
 
     JobsApp.createJobDetailsEl = function(job, callback) {
         var details = JobsApp.getJobDetails(job.id, function(jobDetails) {
-             var el = $("<div class='details'> details </div>");
+             var el = $("<div class='details'> </div>");
+             el.append(JSON.stringify(jobDetails));
              callback(el);
         });
     };
