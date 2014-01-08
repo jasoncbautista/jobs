@@ -3,10 +3,15 @@
     JobsApp.createJobEl= function(job) {
         var el = $("<div>" + job.description + "</div>");
         el.click(function(){
-            el.find(".details").remove();
-            var jobDetailsEl = JobsApp.createJobDetailsEl();
-            el.append(jobDetailsEl);
-        });
+            // Toggle if already shown
+            var detailsEl =  el.find(".details");
+            detailsEl.remove();
+            if (detailsEl.length > 0 ) {
+                var jobDetailsEl = JobsApp.createJobDetailsEl();
+                el.append(jobDetailsEl);
+
+            }
+                    });
         return el;
     };
 
