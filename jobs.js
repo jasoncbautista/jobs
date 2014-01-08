@@ -4,6 +4,8 @@
         return $("<div>" + job.description + "</div>");
     };
 
+    JobsApp.getJobDetails = function(id) {
+    }
     JobsApp.renderList = function(listHolderEl, jobList){
         _.each(jobList, function(job) {
             console.log('job', job);
