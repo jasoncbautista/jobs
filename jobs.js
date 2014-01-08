@@ -20,6 +20,16 @@
             failCallback(job);
         });
     };
+
+
+
+    JobsApp.reformat = function(){
+        // Make sure our jobs are formatted nicely
+        d3.selectAll(".historyEntry").style("background-color", function(d, i) {
+            return i % 2 ? "green" : "brown";
+        });
+    };
+
     /**
      * Renders a job list element
      * @param {type} job,
@@ -47,7 +57,8 @@
             var detailsEl =  el.find(".details");
             if (detailsEl.length  ===  0 ) {
                 var jobDetailsEl = JobsApp.createJobDetailsEl(job, function(jobDetailsEl){
-                    el.append(jobDetailsEl);
+                    el.append(jobDetailsEl);j
+                    JobsApp.reformat();
                 });
             } else {
                 detailsEl.remove();
@@ -79,10 +90,6 @@
             el.append(historyEl);
         });
 
-        debugger;
-        d3.selectAll(".historyEntry").style("background-color", function(d, i) {
-              return i % 2 ? "green" : "brown";
-        });
     };
 
     /**
