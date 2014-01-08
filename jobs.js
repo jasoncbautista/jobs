@@ -69,8 +69,9 @@
     };
 
     JobsApp.createHistoryEl = function(history) {
-        return $("<span>" + history.last_ran + "</span>");
+        return $("<div>" + history.last_ran + "</div>");
     };
+
     JobsApp.renderJobHistory = function(jobDetails, el){
         _.each(jobDetails.history, function(history){
             console.log(history);
