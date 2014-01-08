@@ -68,6 +68,17 @@
         });
     };
 
+    JobsApp.createHistoryEl = function(history) {
+        return $("<span>" + history.last_ran + "</span>");
+    };
+    JobsApp.renderJobHistory = function(jobDetails, el){
+        _.each(jobDetails.history, function(history){
+            console.log(history);
+            var historyEl = JobsApp.createHistoryEl(history);
+            el.append(historyEl);
+        });
+    };
+
     /**
      * Renders / creates the job details DOM element
      * @param {type} job,
@@ -78,6 +89,7 @@
         var details = JobsApp.getJobDetails(job.id, function(jobDetails) {
              var el = $("<div class='details'> </div>");
              el.append(JSON.stringify(jobDetails));
+             JobsApp.renderJobHistory(jobDetails, el);
              callback(el);
         });
     };
