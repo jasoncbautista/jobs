@@ -1,14 +1,44 @@
  $(document).ready(function(){
     var JobsApp = {};
 
+
+
+    JobsApp.triggerJobRunNow = function(job, successCallback, failCallback) {
+        var jobPromise = $.get(job.id + ".json");
+        jobPromise.done(function(){
+            successCallback(job);
+        });
+
+        jobPromise.fail(function(){
+            failCallback(job);
+        });
+    };
     /**
      * Renders a job list element
      * @param {type} job,
      * @return {Null}
      */
     JobsApp.createJobEl= function(job) {
-        var el = $("<div>" + job.id  +   " | " + job.description + "</div>");
-        el.click(function(){
+        var el = $("<div>" + job.id  +   " | <span class='jobName'> " + job.description + "</span> </div>");
+        // TODO: use underscore tempaltes
+        var scheduleJobEl = $("<button> Run Now </button>");
+        el.prepend(scheduleJobEl);
+        scheduleJobEl.click(function(){
+            console.log('scheduling job..', job);
+
+            JobsApp.triggerJobRunNow(
+                job
+
+                , function(job) {
+                    alert("success!");
+                }
+
+                , function(job) {
+                    alert("failed!");
+                }
+        });
+
+        el.find(".jobName").click(function(){
             // Toggle if already shown
             var detailsEl =  el.find(".details");
             if (detailsEl.length  ===  0 ) {
