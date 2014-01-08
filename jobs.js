@@ -57,7 +57,7 @@
             var detailsEl =  el.find(".details");
             if (detailsEl.length  ===  0 ) {
                 var jobDetailsEl = JobsApp.createJobDetailsEl(job, function(jobDetailsEl){
-                    el.append(jobDetailsEl);j
+                    el.append(jobDetailsEl);
                     JobsApp.reformat();
                 });
             } else {
