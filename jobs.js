@@ -26,7 +26,7 @@
     JobsApp.reformat = function(){
         // Make sure our jobs are formatted nicely
         d3.selectAll(".historyEntry").style("background-color", function(d, i) {
-            return i % 2 ? "green" : "brown";
+            return i % 2 ? "#99CCFF" : "#99FFFF";
         });
     };
 
