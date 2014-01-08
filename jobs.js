@@ -3,6 +3,15 @@
 
 
 
+    /**
+     * Makes an ajax call to the server to ask the job to be scheduled.
+     * Takes two functions, one for successful scheduling, one for failed.
+     *
+     * @param {type} job,
+     * @param {type} successCallback,
+     * @param {type} failCallback,
+     * @return {Null}
+     */
     JobsApp.triggerJobRunNow = function(job, successCallback, failCallback) {
         var jobPromise = $.get(job.id + ".json");
         jobPromise.done(function(){
