@@ -2,6 +2,10 @@
     "job":  {
                     "name": "some name 2"
                 ,   "id": "3232" 
-                , "history": []
+                , "history": [
+                        { "last_ran": "2014-1-6"}
+                    ,   { "last_ran": "2014-1-4"}
+                    ,   { "last_ran": "2014-1-3"}
+                ]
     }
 }
