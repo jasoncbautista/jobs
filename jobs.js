@@ -5,11 +5,11 @@
         el.click(function(){
             // Toggle if already shown
             var detailsEl =  el.find(".details");
-            detailsEl.remove();
-            if (detailsEl.length > 0 ) {
+            if (detailsEl.length  ===  0 ) {
                 var jobDetailsEl = JobsApp.createJobDetailsEl();
                 el.append(jobDetailsEl);
-
+            } else {
+                detailsEl.remove();
             }
                     });
         return el;
