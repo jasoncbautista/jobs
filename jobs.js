@@ -28,7 +28,7 @@
      * @return {Null}
      */
     JobsApp.createJobEl= function(job) {
-        var el = $("<div>" + job.id  +   " | <span class='jobName'> " + job.description + "</span> </div>");
+        var el = $("<div class='jobEntry'>" + job.id  +   " | <span class='jobName'> " + job.description + "</span> </div>");
         // TODO: use underscore tempaltes
         var scheduleJobEl = $("<button> Run Now </button>");
         el.prepend(scheduleJobEl);
@@ -101,6 +101,13 @@
             var jobEl = JobsApp.createJobEl(job);
             listHolderEl.append(jobEl);
         });
+
+
+        // Add a little styling with d3:
+        d3.selectAll(".jobEntry").style("background-color", function(d, i) {
+              return i % 2 ? "#fff" : "#eee";
+        });
+
     };
 
     function reqListener () {
