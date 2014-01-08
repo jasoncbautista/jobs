@@ -9,7 +9,6 @@
                 var jobDetailsEl = JobsApp.createJobDetailsEl(job, function(jobDetailsEl){
                     el.append(jobDetailsEl);
                 });
-
             } else {
                 detailsEl.remove();
             }
@@ -29,6 +28,7 @@
              callback(el);
         });
     };
+
     JobsApp.renderList = function(listHolderEl, jobList){
         _.each(jobList, function(job) {
             console.log('job', job);
