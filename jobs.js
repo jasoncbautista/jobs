@@ -1,11 +1,24 @@
  $(document).ready(function(){
     var JobsApp = {};
     JobsApp.createJobEl= function(job) {
-        return $("<div>" + job.description + "</div>");
+        var el = $("<div>" + job.description + "</div>");
+        el.click(function(){
+            el.remove(".details");
+            var jobDetailsEl = JobsApp.createJobDetailsEl();
+            el.append(jobDetailsEl);
+        };
+        return el;
     };
 
     JobsApp.getJobDetails = function(id) {
-    }
+        return {
+            "details": []
+        }
+    };
+
+    JobsApp.createJobDetailsEl = function(job) {
+        return $("<div class='details'> details </div>");
+    };
     JobsApp.renderList = function(listHolderEl, jobList){
         _.each(jobList, function(job) {
             console.log('job', job);
