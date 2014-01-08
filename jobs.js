@@ -105,7 +105,7 @@
 
         // Add a little styling with d3:
         d3.selectAll(".jobEntry").style("background-color", function(d, i) {
-              return i % 2 ? "#fff" : "#eee";
+              return i % 2 ? "white" : "#C0C0C0";
         });
 
     };
