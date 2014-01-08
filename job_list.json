@@ -9,5 +9,12 @@
                     "id": 8383
                 ,   "description": "Some job blah blah 2"
             }
+
+
+        ,   {
+                    "id": 9080 
+                ,   "description": "Fake job that doesn't exist, should fail"
+            }
+
     ]
 }
