@@ -36,6 +36,7 @@
                 , function(job) {
                     alert("failed!");
                 }
+            );
         });
 
         el.find(".jobName").click(function(){
