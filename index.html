@@ -1,9 +1,19 @@
 <html>
-
-
     <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </head>
     <body>
         Cool
     </body>
+
+    <script>
+        $(document).ready(function(){
+            console.log("hi");
+            $.get("job_list.json", function(data) {
+                console.log('data', data);
+            });
+
+            console.log("hi");
+        });
+    </script>
 </html>
