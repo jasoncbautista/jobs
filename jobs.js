@@ -3,7 +3,7 @@
     JobsApp.createJobEl= function(job) {
         var el = $("<div>" + job.description + "</div>");
         el.click(function(){
-            el.remove(".details");
+            el.find(".details").remove();
             var jobDetailsEl = JobsApp.createJobDetailsEl();
             el.append(jobDetailsEl);
         });
