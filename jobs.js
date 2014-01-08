@@ -21,8 +21,6 @@
         });
     };
 
-
-
     JobsApp.reformat = function(){
         // Make sure our jobs are formatted nicely
         d3.selectAll(".historyEntry").style("background-color", function(d, i) {
@@ -84,12 +82,11 @@
     };
 
     JobsApp.renderJobHistory = function(jobDetails, el){
+        el.append($("<div> Number of times ran: " +  jobDetails.history.length + "</div>"));
         _.each(jobDetails.history, function(history){
-            console.log(history);
             var historyEl = JobsApp.createHistoryEl(history);
             el.append(historyEl);
         });
-
     };
 
     /**
@@ -101,7 +98,6 @@
     JobsApp.createJobDetailsEl = function(job, callback) {
         var details = JobsApp.getJobDetails(job.id, function(jobDetails) {
              var el = $("<div class='details'> </div>");
-             el.append(JSON.stringify(jobDetails));
              JobsApp.renderJobHistory(jobDetails, el);
              callback(el);
         });
