@@ -1,9 +1,7 @@
 {
     "job":  {
-            "name": "some name 2"
-        ,   "id": 8383 
-        "history": [
-        }
-
+                    "name": "some name 2"
+                ,   "id": "3232" 
+                , "history": []
     }
 }
