@@ -31,15 +31,11 @@
         var scheduleJobEl = $("<button> Run Now </button>");
         el.prepend(scheduleJobEl);
         scheduleJobEl.click(function(){
-            console.log('scheduling job..', job);
-
             JobsApp.triggerJobRunNow(
                 job
-
                 , function(job) {
                     alert("success!");
                 }
-
                 , function(job) {
                     alert("failed!");
                 }
