@@ -1,10 +1,15 @@
 <html>
     <head>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://underscorejs.org/underscore-min.js"></script>
     </head>
     <body>
         Cool
     </body>
+        <div id="jobList">
+            <div> Jobs </div>
+        
+        </div>
 
     <script>
         $(document).ready(function(){
@@ -12,17 +17,22 @@
             var JobsApp = {};
 
             JobsApp.createJobEl= function(job) {
-
+                return $("<div>" + job.description + "</div>");
             };
 
-            JobsApp.renderList = function(list){
-
+            JobsApp.renderList = function(listHolderEl, jobList){
+                _.each(jobList, function(job) {
+                    var jobEl = JobsApp.createJobEl
+                    listHolderEl.append(jobEl);
+                });
             };
+
             function reqListener () {
                 var jsonString = this.responseText;
                 // console.log(jsonString);
                 var jsonObj = JSON.parse(jsonString);
                 console.log(jsonObj);
+                JobsApp.renderList($("#jobList), jsonObj);
             }
 
             var oReq = new XMLHttpRequest();
