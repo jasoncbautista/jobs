@@ -1,7 +1,7 @@
  $(document).ready(function(){
     var JobsApp = {};
     JobsApp.createJobEl= function(job) {
-        var el = $("<div>" + job.description + "</div>");
+        var el = $("<div>" + job.id  +   " | " + job.description + "</div>");
         el.click(function(){
             // Toggle if already shown
             var detailsEl =  el.find(".details");
