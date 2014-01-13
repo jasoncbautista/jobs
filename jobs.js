@@ -28,6 +28,33 @@
         });
     };
 
+
+    JobsApp.addScheduleButton = function(parentEl, job) {
+        var scheduleJobEl = $("<button> Schedule </button>");
+        parentEl.prepend(scheduleJobEl);
+        scheduleJobEl.click(function(){
+
+        });
+
+    };
+
+    JobsApp.addRunNowButton = function(parentEl, job) {
+        var scheduleJobEl = $("<button> Run Now </button>");
+        parentEl.prepend(scheduleJobEl);
+        scheduleJobEl.click(function(){
+            JobsApp.triggerJobRunNow(
+                job
+            , function(job) {
+        alert("success!");
+            }
+            , function(job) {
+        alert("failed!");
+            }
+            );
+        });
+
+    };
+
     /**
      * Renders a job list element
      * @param {type} job,
@@ -39,19 +66,9 @@
                    job.description + "</span> <span> | " +
                    job.last_ran + "</span> </div>");
         // TODO: use underscore tempaltes
-        var scheduleJobEl = $("<button> Run Now </button>");
-        el.prepend(scheduleJobEl);
-        scheduleJobEl.click(function(){
-            JobsApp.triggerJobRunNow(
-                job
-                , function(job) {
-                    alert("success!");
-                }
-                , function(job) {
-                    alert("failed!");
-                }
-            );
-        });
+
+        JobsApp.addScheduleButton(el, job);
+        JobsApp.addRunNowButton(el, job);
 
         el.find(".jobName").click(function(){
             // Toggle if already shown
