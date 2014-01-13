@@ -34,7 +34,10 @@
      * @return {Null}
      */
     JobsApp.createJobEl= function(job) {
-        var el = $("<div class='jobEntry'>" + job.id  +   " | <span class='jobName'> " + job.description + "</span> </div>");
+        var el = $("<div class='jobEntry'>" + job.id  +
+                   " | <span class='jobName'> " +
+                   job.description + "</span> <span> | " +
+                   job.last_ran + "</span> </div>");
         // TODO: use underscore tempaltes
         var scheduleJobEl = $("<button> Run Now </button>");
         el.prepend(scheduleJobEl);
@@ -78,7 +81,7 @@
     };
 
     JobsApp.createHistoryEl = function(history) {
-        return $("<div class='historyEntry'>" + history.last_ran + "</div>");
+        return $("<div class='historyEntry'>" + history.ran + "</div>");
     };
 
     JobsApp.renderJobHistory = function(jobDetails, el){

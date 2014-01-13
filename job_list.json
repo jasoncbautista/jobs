@@ -3,17 +3,20 @@
             {
                     "id": 3232
                 ,   "description": "Some job blah blah"
+                ,   "last_ran": "2014-1-6" 
             }
 
         ,   {
                     "id": 8383
                 ,   "description": "Some job blah blah 2"
+                ,   "last_ran": "" 
             }
 
 
         ,   {
                     "id": 9080 
                 ,   "description": "Fake job that doesn't exist, should fail"
+                ,   "last_ran": "" 
             }
 
     ]
