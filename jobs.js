@@ -28,7 +28,6 @@
         });
     };
 
-
     JobsApp.addScheduleButton = function(parentEl, job) {
         var scheduleJobEl = $("<button> Schedule </button>");
         parentEl.prepend(scheduleJobEl);
@@ -52,7 +51,6 @@
             }
             );
         });
-
     };
 
     /**
@@ -66,7 +64,6 @@
                    job.description + "</span> <span> | " +
                    job.last_ran + "</span> </div>");
         // TODO: use underscore tempaltes
-
         JobsApp.addScheduleButton(el, job);
         JobsApp.addRunNowButton(el, job);
 
