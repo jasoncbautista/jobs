@@ -28,11 +28,19 @@
         });
     };
 
+    JobsApp.loadScheduleChooser = function(parentEl, job) {
+        var timeChooserHolder = parentEl.find(".timeChooserHolder")
+        timeChooserHolder.empty();
+        var timeChooser = $("#timeChooser").clone();
+        timeChooserHolder.append(timeChooser);
+        timeChooser.show();
+    };
+
     JobsApp.addScheduleButton = function(parentEl, job) {
         var scheduleJobEl = $("<button> Schedule </button>");
         parentEl.prepend(scheduleJobEl);
         scheduleJobEl.click(function(){
-
+            JobsApp.loadScheduleChooser(parentEl, job);
         });
 
     };
@@ -62,7 +70,7 @@
         var el = $("<div class='jobEntry'>" + job.id  +
                    " | <span class='jobName'> " +
                    job.description + "</span> <span> | " +
-                   job.last_ran + "</span> </div>");
+                   job.last_ran + "</span> <div class='timeChooserHolder'> </div></div>");
         // TODO: use underscore tempaltes
         JobsApp.addScheduleButton(el, job);
         JobsApp.addRunNowButton(el, job);

@@ -8,7 +8,7 @@
         <link type="text/css" href="cron/jquery-cron.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="timeChooser">
+        <div id="timeChooser" style="display:none" class="timeChooser">
             <select class="dateChooser">
                 <option value="Weekly">Weekly</option>
                 <option value="Monthly">Monthly</option>
@@ -44,8 +44,8 @@
                 <option value=""></option>
             </select>
 
-            <button> Schedule </button>
-            <button> Cancel </button>
+            <button> Save </button>
+            <button class='save'> Cancel </button>
 
         </div>
         <div id="jobList">
