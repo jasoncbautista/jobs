@@ -28,12 +28,25 @@
         });
     };
 
+    JobsApp.bindSchedulerChooserButton = function(chooserEl, job) {
+        var cancelButton = chooserEl.find(".cancel");
+        var saveButton = chooserEl.find(".save");
+
+        cancelButton.click(function(){
+            chooserEl.remove();
+        });
+        saveButton.click(function(){
+            chooserEl.remove();
+        });
+    };
+
     JobsApp.loadScheduleChooser = function(parentEl, job) {
         var timeChooserHolder = parentEl.find(".timeChooserHolder")
         timeChooserHolder.empty();
         var timeChooser = $("#timeChooser").clone();
         timeChooserHolder.append(timeChooser);
         timeChooser.show();
+        JobsApp.bindSchedulerChooserButton(timeChooser, job);
     };
 
     JobsApp.addScheduleButton = function(parentEl, job) {
@@ -42,7 +55,6 @@
         scheduleJobEl.click(function(){
             JobsApp.loadScheduleChooser(parentEl, job);
         });
-
     };
 
     JobsApp.addRunNowButton = function(parentEl, job) {
