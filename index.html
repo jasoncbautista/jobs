@@ -4,23 +4,53 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="http://underscorejs.org/underscore-min.js"></script>
         <link rel="stylesheet" typpe="text/css" href="jobs.css"/>
-
         <script type="text/javascript" src="cron/jquery-cron.js"></script>
         <link type="text/css" href="cron/jquery-cron.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="dateChooser">
-            <select>
-                <option value="Monthly"> Monthly </option>
-                <option value="Weekly"> Weekly </option>
-                <option value="Daily">Daily </option>
+        <div class="timeChooser">
+            <select class="dateChooser">
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Daily">Daily</option>
+                <option value=""></option>
             </select>
+
+            <select class="dateChooser">
+                <option value="once">Once</option>
+                <option value="every">Every</option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+
+            <select class="dateChooser">
+                <option value="mon">Monday</option>
+                <option value="tues">Tuesday</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="30">30</option>
+                <option value=""></option>
+            </select>
+
+            <select class="dateChooser">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value=""></option>
+            </select>
+
+            <select class="dateChooser">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+                <option value=""></option>
+            </select>
+
+            <button> Schedule </button>
+            <button> Cancel </button>
+
         </div>
         <div id="jobList">
-            <div> Jobs </div>
+            <div>Jobs</div>
         </div>
-
-
     </body>
     <script src="jobs.js"></script>
 </html>
