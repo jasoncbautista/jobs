@@ -80,9 +80,11 @@
      */
     JobsApp.createJobEl= function(job) {
         var el = $("<div class='jobEntry'>" + job.id  +
+                   " <span> | " + job.status + "</span> " +
                    " | <span class='jobName'> " +
-                   job.description + "</span> <span> | " +
-                   job.last_ran + "</span> <div class='timeChooserHolder'> </div></div>");
+                   job.description + "</span> "+
+                   " <span> | " + job.last_ran + "</span> " +
+                   "<div class='timeChooserHolder'> </div></div>");
         // TODO: use underscore tempaltes
         JobsApp.addScheduleButton(el, job);
         JobsApp.addRunNowButton(el, job);
